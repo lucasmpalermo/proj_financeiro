@@ -11,6 +11,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pandas_datareader.data as web
 import yfinance as yf
+import seaborn as sns
 
 #sobrescreve as buscas de cotacoes do yahoo finance pelo pandasdatareader por essa nova
 yf.pdr_override() 
@@ -18,8 +19,15 @@ yf.pdr_override()
 
 #Obter os dados do ibovespa
 ticker = input("Qual ativo gostaria de ver o gráfico?")
+sns.set()   
 ativo = web.get_data_yahoo(ticker)
 ativo["Close"].plot(figsize=(22,8))
+
+plt.xlabel("Ano")
+plt.ylabel("Valor")
+plt.title("Variação de Preço")
+plt.plot()
+
 
 # Calculo para definir o valor máximo de rolagem em uma THL
 vol = float(input("Qual a volatilidade? "))
