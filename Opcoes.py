@@ -16,7 +16,7 @@ import seaborn as sns
 #sobrescreve as buscas de cotacoes do yahoo finance pelo pandasdatareader por essa nova
 yf.pdr_override() 
 
-
+5
 #Obter os dados do ibovespa
 ticker = input("Qual ativo gostaria de ver o gráfico?")
 sns.set()   
